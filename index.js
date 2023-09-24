@@ -1,28 +1,52 @@
-const $xhr = document.getElementById('xhr');
-const API_URL = 'https://jsonplaceholder.typicode.com/users';
+const $company_table = document.getElementById('company-table');
+const $employee_table = document.getElementById('employee-table');
 
-async function getElements(){
-  try{
-    const response = await fetch(API_URL);
-    const resultText = await response.json();
-    addUsers(resultText);
+const COMPANY_URL = 'https://utn-lubnan-api-1.herokuapp.com/api/Company';
+const EMPLOYEE_URL =  'https://utn-lubnan-api-1.herokuapp.com/api/Employee';
 
-  }catch (error){
-    console.log(error);
+
+async function fetchData(url) {
+  try {
+    const response = await fetch(url);
+    return await response.json();
+  } catch (error) {
+    console.error(error);
   }
 }
 
-function addUsers(users){
-  $xhr.innerHTML = '';
+function populateCompanyTable(companies) {
+  $company_table.innerHTML = '';
 
-  users.forEach(element => {
-    const row = $xhr.insertRow();
+  companies.forEach(element => {
+    const row = $company_table.insertRow();
     row.innerHTML = `
-    <td>${element.name}</td>
-    <td>${element.id}</td>
-    `
+      <td>${element.name}</td>
+      <td>${element.companyId}</td>
+    `;
   });
-  
+}
+
+function populateEmployeeTable(employees) {
+  $employee_table.innerHTML = '';
+
+  employees.forEach(element => {
+    const row = $employee_table.insertRow();
+    row.innerHTML = `
+      <td>${element.firstName} ${element.lastName}</td>
+      <td>${element.companyId}</td>
+      <td>${element.employeeId}</td>
+      <td>${element.email}</td>
+    `;
+  });
+}
+
+async function getElements() {
+  const [companies, employees] = await Promise.all([
+    fetchData(COMPANY_URL),
+    fetchData(EMPLOYEE_URL)
+  ]);
+  populateCompanyTable(companies);
+  populateEmployeeTable(employees);
 }
 
 getElements();

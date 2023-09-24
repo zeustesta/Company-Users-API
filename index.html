@@ -3,22 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
   <title>Document</title>
 </head>
 <body>
-  <h2>Objeto XMLHttpRequest</h2>
-  <table>
-    <tr>
-      <th>Nombre Usuario</th>
-      <th>Id Usuario</th>
-    </tr>
-  </thead>
-  <tbody id="xhr">
-    <!-- Content generated with JS -->
-  </tbody>
+  <h2>Company & Users API</h2>
+  <hr>
+  <h4>Companies:</h4>
+  <div class="companies-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Company ID</th>
+        </tr>
+      </thead>
+      <tbody id="company-table">
+        <!-- Content generated with JS -->
+      </tbody>
+    </table>
+  </div>
 
-  </table>
-
+  <h4>Employees:</h4>
+  <div class="employees-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Employee Name</th>
+          <th>Company ID</th>
+          <th>Employee ID</th>
+          <th>Employee Email</th>
+        </tr>
+      </thead>
+      <tbody id="employee-table">
+        <!-- Content generated with JS -->
+      </tbody>
+    </table>
+  </div>
   <script src="/index.js"></script>
 </body>
 </html>
