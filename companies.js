@@ -1,6 +1,6 @@
 export default class Company{
-  constructor(){
-    this.companyId = null;
-    this.companyName = null;
+  constructor(companyId, companyName){
+    this.companyId = companyId;
+    this.companyName = companyName;
   }
 }

@@ -40,6 +40,25 @@
         </tbody>
       </table>
     </div>
+
+    <!-- Search form -->
+    <br>
+    <hr>
+    <br>
+    <form id="searchForm" action="#">
+      <label for="searchType">Buscar por:</label>
+      <select id="searchType" name="searchType">
+        <option value="id">ID</option>
+        <option value="first&last-name">Nombre y Apellido</option>
+        <option value="email">Email</option>
+      </select>
+      <input type="text" id="searchInput" name="searchInput" placeholder="Ingrese el dato de busqueda">
+      <button id="searchButton" type="submit">Buscar</button>
+    </form>
+
+    <h2>Resultado de la busqueda:</h2>
+    <p id="searchResult-paragraph"></p>
+
     <script type="module" src="/index.js"></script>
   </body>
 </html>
