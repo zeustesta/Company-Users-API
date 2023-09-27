@@ -1,3 +1,7 @@
+import Employee from "./employees.js";
+import Companies from "./companies.js";
+
+
 const $company_table = document.getElementById('company-table');
 const $employee_table = document.getElementById('employee-table');
 

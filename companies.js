@@ -3,6 +3,4 @@ export default class Company{
     this.companyId = null;
     this.companyName = null;
   }
-
-  
 }
