@@ -1,6 +1,7 @@
 html{
   box-sizing: border-box;
-  font-size: 62.5%;
+  /* font-size: 62.5%; */
+  font-size: 80%;
 }
 
 *, *:after, *:before{
@@ -13,4 +14,12 @@ html{
 
 .employees-container{
   text-align: center;
+}
+
+#Post-Form{
+  text-align: center;
+}
+
+#Post-Form button{
+  margin: 1rem;
 }

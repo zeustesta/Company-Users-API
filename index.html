@@ -56,8 +56,58 @@
       <button id="searchButton" type="submit">Buscar</button>
     </form>
 
-    <h2>Resultado de la busqueda:</h2>
-    <p id="searchResult-paragraph"></p>
+    <h2>Search results:</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Employee Name</th>
+          <th>Company ID</th>
+          <th>Employee ID</th>
+          <th>Employee Email</th>
+        </tr>
+      </thead>
+      <tbody id="results-table">
+        <!-- Content generated with JS -->
+      </tbody>
+    </table>
+
+    <!-- Post to API -->
+
+    <form id="Post-Form" action="#">
+      <h2>New employee: //Works, but API doesn't allow posting variables</h2>
+      <div class="input-box">
+        <h5>Introduce first name</h5>
+        <input id="firstName" type="text" required>
+      </div>
+
+      <div class="input-box">
+        <h5>Introduce last name</h5>
+        <input id="lastName" type="text" required>
+      </div>
+
+      <div class="input-box">
+        <h5>Introduce company ID</h5>
+        <input id="companyId" type="number" required>
+      </div>
+
+      <div class="input-box">
+        <h5>Introduce email</h5>
+        <input id="email" type="email" required>
+      </div>
+
+      <button id="Post-Button" type="submit" disabled>Post</button>
+    </form>
+
+    <!-- Post to API harcoded -->
+
+    <div class="post-harcoded">
+      <p>Name: 'John'</p>
+      <p>Last name: 'Doe'</p>
+      <p>Company Id: 8</p>
+      <p>Email: 'john@doe.com'</p>
+
+      <button id="Post-Harcoded-Button" type="submit">Post</button>
+    </div>
 
     <script type="module" src="/index.js"></script>
   </body>
